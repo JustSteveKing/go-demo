@@ -32,18 +32,37 @@ go mod download
 
 ### Running the Server
 
+Using Make (recommended):
+```bash
+make run
+```
+
+Or for development (no binary build):
+```bash
+make dev
+```
+
+Or manually:
 ```bash
 go run .
 ```
 
-Or build and run:
+The server will start on `http://localhost:8000`
+
+### Make Commands
+
+This project includes a Makefile for common tasks. Run `make help` to see all available commands:
 
 ```bash
-go build
-./go-demo
+make help              # Show all available commands
+make build             # Build the application
+make test              # Run tests with coverage
+make lint              # Run linter
+make security          # Run security scanner
+make ci                # Run all CI checks locally
+make clean             # Clean build artifacts
+make install-tools     # Install development tools
 ```
-
-The server will start on `http://localhost:8000`
 
 ## API Endpoints
 
@@ -78,13 +97,46 @@ Response:
 {"version":"dev","commit":"","built":""}
 ```
 
-## Building with Version Info
+## Development
 
-You can inject build information at compile time:
+### Building with Version Info
+
+The Makefile automatically injects build information:
 
 ```bash
-go build -ldflags "-X main.buildVersion=1.0.0 -X main.buildCommit=$(git rev-parse HEAD) -X main.buildTime=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+make build
 ```
+
+Or build for all platforms:
+
+```bash
+make build-all
+```
+
+### Running CI Checks Locally
+
+Before pushing, you can run the same checks that CI runs:
+
+```bash
+make ci
+```
+
+This will:
+- Verify dependencies
+- Run linter
+- Run tests with race detection
+- Run security scanner
+
+### Installing Development Tools
+
+```bash
+make install-tools
+```
+
+This installs:
+- golangci-lint (linting)
+- gosec (security scanning)
+- goreleaser (release testing)
 
 ## Project Structure
 
