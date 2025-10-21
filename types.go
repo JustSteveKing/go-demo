@@ -2,7 +2,7 @@ package main
 
 import "net/http"
 
-// Build info set via -ldflags at build time (optional)
+// Build info set via -ldflags at build time (optional).
 var (
 	buildVersion = "dev"
 	buildCommit  = ""
