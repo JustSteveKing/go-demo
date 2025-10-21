@@ -47,7 +47,7 @@ Or manually:
 go run .
 ```
 
-The server will start on `http://localhost:8000`
+The server will start on `http://localhost:8080`
 
 ### Make Commands
 
@@ -70,14 +70,14 @@ make install-tools     # Install development tools
 Returns a simple greeting message.
 
 ```bash
-curl http://localhost:8000/
+curl http://localhost:8080/
 ```
 
 ### `GET /health`
 Health check endpoint returning JSON status.
 
 ```bash
-curl http://localhost:8000/health
+curl http://localhost:8080/health
 ```
 
 Response:
@@ -89,7 +89,7 @@ Response:
 Returns build version information.
 
 ```bash
-curl http://localhost:8000/version
+curl http://localhost:8080/version
 ```
 
 Response:
@@ -153,7 +153,7 @@ This installs:
 
 Configuration is done via constants in `main.go`:
 
-- `serverPort` - Server listen address (default: `:8000`)
+- `serverPort` - Server listen address (default: `:8080`)
 - `shutdownTimeout` - Graceful shutdown timeout (default: `10s`)
 - `readTimeout` - HTTP read timeout (default: `5s`)
 - `writeTimeout` - HTTP write timeout (default: `10s`)

@@ -1,3 +1,4 @@
+version: "2"
 run:
   timeout: 5m
   tests: true
@@ -20,7 +21,7 @@ linters:
     - gosec
     - copyloopvar
 
-linters-settings:
+linter-settings:
   errcheck:
     check-type-assertions: true
     check-blank: true
