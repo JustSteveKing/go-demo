@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	serverPort        = ":8000"
+	serverPort        = ":8080"
 	shutdownTimeout   = 10 * time.Second
 	readHeaderTimeout = 2 * time.Second
 	readTimeout       = 5 * time.Second
