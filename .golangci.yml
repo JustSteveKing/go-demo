@@ -18,7 +18,7 @@ linters:
     - godot
     - revive
     - gosec
-    - exportloopref
+    - copyloopvar
 
 linters-settings:
   errcheck:
